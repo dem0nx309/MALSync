@@ -10,11 +10,6 @@
     "name": "TurkAnime"
   },
   {
-    "domain": "https://animepahe.com",
-    "type": "anime",
-    "name": "animepahe"
-  },
-  {
     "domain": "https://www.netflix.com",
     "type": "anime",
     "name": "Netflix"
@@ -95,11 +90,6 @@
     "name": "moeclip"
   },
   {
-    "domain": "https://mangalivre.net",
-    "type": "manga",
-    "name": "Mangá Livre"
-  },
-  {
     "domain": "https://zonatmo.com",
     "type": "manga",
     "name": "tmofans"
@@ -168,11 +158,6 @@
     "domain": "https://www.tranimeizle.net/",
     "type": "anime",
     "name": "TRanimeizle"
-  },
-  {
-    "domain": "https://beta.animestreamingfr.fr",
-    "type": "anime",
-    "name": "AnimeStreamingFR"
   },
   {
     "domain": "https://furyosociety.com/",
@@ -315,11 +300,6 @@
     "name": "Bentomanga"
   },
   {
-    "domain": "https://mangasushi.net",
-    "type": "manga",
-    "name": "MangaSushi"
-  },
-  {
     "domain": "https://readmanhua.net",
     "type": "manga",
     "name": "ReadManhua"
@@ -353,11 +333,6 @@
     "domain": "https://disasterscans.com",
     "type": "manga",
     "name": "DisasterScans"
-  },
-  {
-    "domain": "https://dynasty-scans.com",
-    "type": "manga",
-    "name": "DynastyScans"
   },
   {
     "domain": "https://aniworld.to",
@@ -715,9 +690,19 @@
     "name": "Sadscans"
   },
   {
+    "domain": "https://sakuramangas.org",
+    "type": "manga",
+    "name": "SakuraMangas"
+  },
+  {
     "domain": "https://arvencomics.com",
     "type": "manga",
     "name": "ArvenComics"
+  },
+  {
+    "domain": "https://french-anime.com",
+    "type": "anime",
+    "name": "French Anime"
   },
   {
     "domain": "https://comikey.com/",
@@ -835,6 +820,11 @@
     "name": "KakuseiProject"
   },
   {
+    "domain": "https://anoboye.com",
+    "type": "anime",
+    "name": "Anoboye"
+  },
+  {
     "domain": "https://animekhor.org",
     "type": "anime",
     "name": "AnimeKhor"
@@ -858,6 +848,11 @@
     "domain": "https://www.silentquill.net",
     "type": "manga",
     "name": "Silentquill"
+  },
+  {
+    "domain": "https://comic-days.com",
+    "type": "manga",
+    "name": "ComicDays"
   },
   {
     "domain": "https://mangaplus.shueisha.co.jp",
@@ -898,5 +893,95 @@
     "domain": "https://violetscans.org",
     "type": "manga",
     "name": "VioletScans"
+  },
+  {
+    "domain": "https://animepahe.com",
+    "type": "anime",
+    "name": "animepahe"
+  },
+  {
+    "domain": "https://animeheaven.me",
+    "type": "anime",
+    "name": "AnimeHeaven"
+  },
+  {
+    "domain": "https://ritharscans.com",
+    "type": "manga",
+    "name": "Ritharscans"
+  },
+  {
+    "domain": "https://www.bilibili.tv",
+    "type": "anime",
+    "name": "BStation"
+  },
+  {
+    "domain": "https://falconscans.com/",
+    "type": "manga",
+    "name": "FalconScans"
+  },
+  {
+    "domain": "https://mangasushi.org",
+    "type": "manga",
+    "name": "MangaSushi"
+  },
+  {
+    "domain": "https://comix.to",
+    "type": "manga",
+    "name": "Comix"
+  },
+  {
+    "domain": "https://dynasty-scans.com",
+    "type": "manga",
+    "name": "DynastyScans"
+  },
+  {
+    "domain": "https://lagoonscans.com/",
+    "type": "manga",
+    "name": "LagoonScan"
+  },
+  {
+    "domain": "https://weebdex.org/",
+    "type": "manga",
+    "name": "WeebDex"
+  },
+  {
+    "domain": "https://setsuscans.com",
+    "type": "manga",
+    "name": "SetsuScans"
+  },
+  {
+    "domain": "https://www.mgeko.cc",
+    "type": "manga",
+    "name": "Mgeko"
+  },
+  {
+    "domain": "https://luacomic.org",
+    "type": "manga",
+    "name": "LuaScans"
+  },
+  {
+    "domain": "https://kaynscan.com",
+    "type": "manga",
+    "name": "KaynScan"
+  },
+  {
+    "domain": "https://comic-walker.com/",
+    "type": "manga",
+    "name": "ComicWalker"
+  },
+  {
+    "domain": "https://mangalivre.tv",
+    "type": "manga",
+    "name": "MangaLivreTV"
+  },
+  {
+    "domain": "https://sanascan.com",
+    "type": "manga",
+    "name": "SanaScans"
+  },
+  {
+    "domain": "https://rezoscan.org",
+    "type": "manga",
+    "name": "RezoScans"
   }
 ]

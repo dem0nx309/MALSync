@@ -6,6 +6,7 @@ import { MetaOverview as AniMeta } from './AniList/metaOverview';
 import { MetaOverview as KitsuMeta } from './Kitsu/metaOverview';
 import { MetaOverview as SimklMeta } from './Simkl/metaOverview';
 import { MetaOverview as ShikiMeta } from './Shikimori/metaOverview';
+import { MetaOverview as HyakanimeMeta } from './Hyakanime/metaOverview';
 
 export function getOverview(url, type, syncMode = '') {
   if (!syncMode) {
@@ -32,6 +33,9 @@ export function getOverview(url, type, syncMode = '') {
   }
   if (syncMode === 'MALAPI') {
     return new MalApiMeta(url);
+  }
+  if (syncMode === 'HYAKANIME') {
+    return new HyakanimeMeta(url);
   }
 
   throw 'Unknown sync mode';

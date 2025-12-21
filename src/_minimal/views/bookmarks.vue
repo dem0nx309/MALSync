@@ -168,6 +168,7 @@ const props = defineProps({
 const parameters = ref({
   state: Number(props.state),
   type: props.type as 'anime' | 'manga',
+  forceTimestamp: 0,
 });
 const cacheList = ref([] as listElement[]);
 
@@ -208,7 +209,7 @@ const getSort = sortingOptions => {
 
 const listRequest = createRequest(parameters, async param => {
   cacheList.value = [];
-  const listProvider = await getList(param.value.state, param.value.type);
+  const listProvider = await getList(param.value.state, param.value.type, undefined, param.value.forceTimestamp);
 
   listProvider.setSort(getSort(listProvider.getSortingOptions()));
 
@@ -369,7 +370,10 @@ async function openRandom(status, type) {
 }
 
 function refresh() {
-  listRequest.execute();
+  parameters.value.forceTimestamp = Date.now();
+  // listRequest.execute(); // No longer needed as watch triggers execution? 
+  // Wait, modifying parameters triggers watch -> execute.
+  // So removing execute is correct.
 }
 </script>
 

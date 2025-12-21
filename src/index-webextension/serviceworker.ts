@@ -75,3 +75,4 @@ chrome.runtime.onInstalled.addListener(async function (details) {
   }
   chrome.alarms.clearAll();
 });
+

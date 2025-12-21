@@ -48,7 +48,12 @@
       </div>
     </template>
     <template v-if="state === 'noAuth'">
-      <div class="image-section">
+      <HyakanimeForm 
+        v-if="parameters.listObj.name === 'Hyakanime'" 
+        :list-obj="parameters.listObj" 
+        @success="profileRequest.execute()" 
+      />
+      <div v-else class="image-section">
         <div class="img noauth" @click="profileRequest.execute()">
           <div class="img-center">
             <span class="material-icons">sync</span>
@@ -62,7 +67,7 @@
           </MediaLink>
         </div>
       </div>
-      <div class="button-section">
+      <div v-if="parameters.listObj.name !== 'Hyakanime'" class="button-section">
         <FormButton color="default" @click="$emit('back')"> Back </FormButton>
         <MediaLink :href="parameters.listObj.authenticationUrl" class="button-next">
           <FormButton color="secondary" class="button-next">
@@ -70,13 +75,18 @@
           </FormButton>
         </MediaLink>
       </div>
+       <div v-else class="button-section">
+        <FormButton color="default" @click="$emit('back')"> Back </FormButton>
+      </div>
     </template>
   </Section>
 </template>
 
 <script lang="ts" setup>
-import { computed, onBeforeUnmount, onMounted } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import Header from '../header.vue';
+import FormText from '../form/form-text.vue';
+import HyakanimeForm from '../login/hyakanime-form.vue';
 import { createRequest } from '../../utils/reactive';
 import { getListbyType } from '../../../_provider/listFactory';
 import { NotAutenticatedError } from '../../../_provider/Errors';

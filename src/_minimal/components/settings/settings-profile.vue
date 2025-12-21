@@ -44,28 +44,48 @@
       </template>
       <template v-else-if="state === 'noAuth'">
         <Header>{{ lang('settings_profile_no_login') }}</Header>
-        <div>
-          <Link :to="{ name: 'Settings', params: { path: ['tracking', 'syncMode'] } }">
-            <TextIcon icon="keyboard_arrow_down" position="after" mode="flex">
-              {{ parameters.listObj.name }}
-            </TextIcon>
-          </Link>
-        </div>
-        <div class="button-flex">
-          <div class="link-hover" @click="profileRequest.execute()">
-            <TextIcon icon="sync">{{ lang('settings_profile_check') }}</TextIcon>
-          </div>
-          <MediaLink :href="parameters.listObj.authenticationUrl">
-            <TextIcon icon="login" class="link-hover">{{ lang('settings_Authenticate') }}</TextIcon>
-          </MediaLink>
-        </div>
+        <template v-if="isHyakanime">
+            <div>
+              <Link :to="{ name: 'Settings', params: { path: ['tracking', 'syncMode'] } }">
+                <TextIcon icon="keyboard_arrow_down" position="after" mode="flex">
+                  {{ parameters.listObj.name }}
+                </TextIcon>
+              </Link>
+            </div>
+            <div class="button-flex">
+                <div class="link-hover" @click="profileRequest.execute()">
+                    <TextIcon icon="sync">{{ lang('settings_profile_check') }}</TextIcon>
+                </div>
+                <div class="link-hover" @click="router.push({ name: 'HyakanimeLogin' })">
+                    <TextIcon icon="login">{{ lang('settings_Authenticate') }}</TextIcon>
+                </div>
+            </div>
+        </template>
+        <template v-else>
+            <div>
+            <Link :to="{ name: 'Settings', params: { path: ['tracking', 'syncMode'] } }">
+                <TextIcon icon="keyboard_arrow_down" position="after" mode="flex">
+                {{ parameters.listObj.name }}
+                </TextIcon>
+            </Link>
+            </div>
+            <div class="button-flex">
+            <div class="link-hover" @click="profileRequest.execute()">
+                <TextIcon icon="sync">{{ lang('settings_profile_check') }}</TextIcon>
+            </div>
+            <MediaLink :href="parameters.listObj.authenticationUrl">
+                <TextIcon icon="login" class="link-hover">{{ lang('settings_Authenticate') }}</TextIcon>
+            </MediaLink>
+            </div>
+        </template>
       </template>
     </ImageText>
   </Section>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
+import { useRouter } from 'vue-router';
 import ImageText from '../image-text.vue';
 import Header from '../header.vue';
 import { createRequest } from '../../utils/reactive';
@@ -83,10 +103,17 @@ defineProps({
   },
 });
 
+const router = useRouter();
+
 const parameters = computed(() => {
   return {
     listObj: getListbyType(api.settings.get('syncMode')),
   };
+});
+
+const isHyakanime = computed(() => {
+  const name = parameters.value.listObj?.name || '';
+  return name.trim() === 'Hyakanime';
 });
 
 const profileRequest = createRequest(

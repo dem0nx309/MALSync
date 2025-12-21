@@ -89,8 +89,7 @@
           />
         </template>
       </div>
-      <div class="score-select">
-        <template v-if="single && scoreModeStrategy">
+      <div class="score-select" v-if="single && scoreModeStrategy">
           <div class="label-row">
             <span class="label">{{ lang('UI_Score') }}</span>
             <template v-if="scoreModeStrategy.ui.module === 'input'">
@@ -135,7 +134,6 @@
             color="violet"
             :options="sortedOptions(single.getScoreCheckbox()) as any"
           />
-        </template>
       </div>
     </div>
     <div class="update-buttons">

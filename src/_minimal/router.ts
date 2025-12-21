@@ -56,6 +56,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Install',
     component: () => import('./views/install.vue'),
   },
+  {
+    path: '/login/hyakanime',
+    name: 'HyakanimeLogin',
+    component: () => import('./views/login-hyakanime.vue'),
+  },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('./views/notFound.vue') },
 ];
 

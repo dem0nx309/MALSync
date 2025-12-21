@@ -117,7 +117,16 @@ const generateManifest = () => {
     default_locale: 'en',
     browser_specific_settings: {
       gecko: {
-        id: '{ceb9801e-aa0c-4bc6-a6b0-9494f3164cc7}',
+        id: '{d9c8712f-bb1d-4cc7-b7c1-9595f4275dd8}',
+        data_collection_permissions: {
+            protocols: false,
+            interaction_data: false,
+            technical_data: false,
+            payment_data: false,
+            authentication_data: false,
+            personal_data: false,
+            required: ['none']
+        },
       },
     },
     background: appTarget === 'firefox' ?
@@ -131,7 +140,22 @@ const generateManifest = () => {
     },
     action: {
       default_popup: 'popup.html',
-      default_icon: 'icons/icon16.png',
+      default_icon: {
+        '16': 'icons/icon16.png',
+        '32': 'icons/icon32.png',
+        '48': 'icons/icon48.png',
+        '128': 'icons/icon128.png',
+      },
+    },
+    sidebar_action: {
+      default_panel: 'window.html',
+      open_at_install: false,
+      default_icon: {
+        '16': 'icons/icon16.png',
+        '32': 'icons/icon32.png',
+        '48': 'icons/icon48.png',
+        '128': 'icons/icon128.png',
+      },
     },
     options_ui: {
       page: 'settings.html',

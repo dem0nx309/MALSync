@@ -16,7 +16,6 @@ import { AnimeOdcinki } from './AnimeOdcinki/main';
 import { serimanga } from './serimanga/main';
 import { mangadenizi } from './mangadenizi/main';
 import { moeclip } from './moeclip/main';
-import { mangalivre } from './mangalivre/main';
 import { tmofans } from './tmofans/main';
 import { JapScan } from './JapScan/main';
 import { Hulu } from './Hulu/main';
@@ -31,7 +30,6 @@ import { OtakuFR } from './OtakuFR/main';
 import { mangatx } from './mangatx/main';
 import { manhuafast } from './manhuafast/main';
 import { TRanimeizle } from './TRanimeizle/main';
-import { AnimeStreamingFR } from './AnimeStreamingFR/main';
 import { Furyosociety } from './Furyosociety/main';
 import { AnimeId } from './AnimeId/main';
 import { MyAnimeListVideo } from './MyAnimeListVideo/main';
@@ -60,7 +58,6 @@ import { FrixySubs } from './FrixySubs/main';
 import { Guya } from './Guya/main';
 import { MangaHub } from './MangaHub/main';
 import { Bentomanga } from './Bentomanga/main';
-import { MangaSushi } from './MangaSushi/main';
 import { ReadManhua } from './ReadManhua/main';
 import { ImmortalUpdates } from './ImmortalUpdates/main';
 import { Zoro } from './Zoro/main';
@@ -68,7 +65,6 @@ import { LHTranslation } from './LHTranslation/main';
 import { MangasOrigines } from './MangasOrigines/main';
 import { BlueSolo } from './BlueSolo/main';
 import { DisasterScans } from './DisasterScans/main';
-import { DynastyScans } from './DynastyScans/main';
 import { Aniworld } from './Aniworld/main';
 import { BetterAnime } from './BetterAnime/main';
 import { BilibiliComics } from './BilibiliComics/main';
@@ -110,6 +106,7 @@ import { TempleScan } from './TempleScan/main';
 import { Kavita } from './Kavita/main';
 import { Aninexus } from './Aninexus/main';
 import { AniDream } from './AniDream/main';
+import { Hyakanime } from './Hyakanime/main';
 
 export const pages = {
   Mangadex,
@@ -130,7 +127,6 @@ export const pages = {
   serimanga,
   mangadenizi,
   moeclip,
-  mangalivre,
   tmofans,
   JapScan,
   Hulu,
@@ -145,7 +141,6 @@ export const pages = {
   mangatx,
   manhuafast,
   TRanimeizle,
-  AnimeStreamingFR,
   Furyosociety,
   AnimeId,
   MyAnimeListVideo,
@@ -174,7 +169,6 @@ export const pages = {
   Guya,
   MangaHub,
   Bentomanga,
-  MangaSushi,
   ReadManhua,
   ImmortalUpdates,
   Zoro,
@@ -182,7 +176,6 @@ export const pages = {
   MangasOrigines,
   BlueSolo,
   DisasterScans,
-  DynastyScans,
   Aniworld,
   BetterAnime,
   BilibiliComics,
@@ -224,4 +217,5 @@ export const pages = {
   Kavita,
   Aninexus,
   AniDream,
+  Hyakanime,
 };

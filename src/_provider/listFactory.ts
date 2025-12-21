@@ -7,6 +7,7 @@ import { UserList as KitsuList } from './Kitsu/list';
 import { UserList as SimklList } from './Simkl/list';
 import { UserList as ShikiList } from './Shikimori/list';
 import { UserList as LocalList } from './Local/list';
+import { UserList as HyakanimeList } from './Hyakanime/list';
 
 export async function getList(...args) {
   let tempList: listElement[] = [];
@@ -35,7 +36,7 @@ function getListObj(args, syncMode = '') {
     syncMode = helper.getSyncMode(args[1] ? args[1] : 'anime');
   }
 
-  const [status, listType, sorting] = args;
+  const [status, listType, sorting, forceTimestamp] = args;
 
   if (syncMode === 'MAL') {
     return new MalList(status, listType, sorting);
@@ -54,6 +55,9 @@ function getListObj(args, syncMode = '') {
   }
   if (syncMode === 'SHIKI') {
     return new ShikiList(status, listType, sorting);
+  }
+  if (syncMode === 'HYAKANIME') {
+    return new HyakanimeList(status, listType, sorting, forceTimestamp);
   }
   throw 'Unknown sync mode';
 }

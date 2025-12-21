@@ -5,6 +5,7 @@ import { search as aniSearch } from './AniList/search';
 import { search as kitsuSearch } from './Kitsu/search';
 import { search as simklSearch } from './Simkl/search';
 import { search as shikiSearch } from './Shikimori/search';
+import { search as hyakanimeSearch } from './Hyakanime/search';
 
 export function search(
   keyword,
@@ -28,6 +29,12 @@ export function search(
   }
   if (syncMode === 'SHIKI') {
     return shikiSearch(keyword, type, options, sync);
+  }
+  if (syncMode === 'HYAKANIME') {
+    if (type === 'manga') {
+      return aniSearch(keyword, type, options, sync);
+    }
+    return hyakanimeSearch(keyword, type, options, sync);
   }
   if (syncMode === 'MALAPI') {
     return malApiSearch(keyword, type, options, sync);

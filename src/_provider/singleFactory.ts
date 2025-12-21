@@ -8,12 +8,14 @@ import { Single as SitsuSingle } from './Kitsu/single';
 import { Single as SimklSingle } from './Simkl/single';
 import { Single as ShikiSingle } from './Shikimori/single';
 import { Single as LocalSingle } from './Local/single';
+import { Single as HyakanimeSingle } from './Hyakanime/single';
 
 export function getSingle(url: string) {
   if (/^local:\/\//i.test(url)) {
     return new LocalSingle(url);
   }
   const syncMode = helper.getSyncMode(url);
+  con.log('getSingle', url, syncMode);
   if (syncMode === 'MAL') {
     return new MalSingle(url);
   }
@@ -31,6 +33,9 @@ export function getSingle(url: string) {
   }
   if (syncMode === 'SHIKI') {
     return new ShikiSingle(url);
+  }
+  if (syncMode === 'HYAKANIME') {
+    return new HyakanimeSingle(url);
   }
   throw 'Unknown sync mode';
 }

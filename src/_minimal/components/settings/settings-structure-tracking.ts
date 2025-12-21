@@ -9,6 +9,7 @@ import { localStore } from '../../../utils/localStore';
 
 export function providerOptions(mode: 'default' | 'secondary' | 'short' = 'default') {
   const options = [
+    { title: 'Hyakanime', value: 'HYAKANIME' },
     { title: 'MyAnimeList', value: 'MAL' },
     { title: 'AniList', value: 'ANILIST' },
     { title: 'Kitsu', value: 'KITSU' },
@@ -17,9 +18,9 @@ export function providerOptions(mode: 'default' | 'secondary' | 'short' = 'defau
     { title: 'MyAnimeList (API) [WORSE]', value: 'MALAPI' },
   ];
   const modeTypes = {
-    default: ['MAL', 'ANILIST', 'KITSU', 'SIMKL', 'SHIKI', 'MALAPI'],
+    default: ['MAL', 'ANILIST', 'KITSU', 'SIMKL', 'SHIKI', 'HYAKANIME', 'MALAPI'],
     secondary: ['MAL', 'ANILIST', 'KITSU'],
-    short: ['MAL', 'ANILIST', 'KITSU', 'SIMKL', 'SHIKI'],
+    short: ['MAL', 'ANILIST', 'KITSU', 'SIMKL', 'SHIKI', 'HYAKANIME'],
   };
   return options.filter(o => modeTypes[mode].includes(o.value));
 }

@@ -15,6 +15,8 @@ const simklRegex = /^https:\/\/simkl\.com\/(anime|manga)\/(\d+)(\/|$)/;
 const shikiRegex = /^https:\/\/shikimori\.one\/(animes|mangas|ranobe)\/\D?(\d+)/;
 const localRegex = /^local:\/\/([^/]+)\/(anime|manga)\/([^/]+)(\/|$)/;
 
+const hyakanimeRegex = /^https:\/\/www\.hyakanime\.fr\/(anime|manga)\/(\d+)(\/|$)/;
+
 export function urlToSlug(url: string): slugObject {
   const obj: slugObject = {
     url,
@@ -65,11 +67,20 @@ export function urlToSlug(url: string): slugObject {
     return obj;
   }
 
+  const hyakanimeMatch = url.match(hyakanimeRegex);
+  if (hyakanimeMatch) {
+    obj.path = {
+      type: hyakanimeMatch[1] as 'anime' | 'manga',
+      slug: `h:${hyakanimeMatch[2]}`,
+    };
+    return obj;
+  }
+
   const localMatch = url.match(localRegex);
   if (localMatch) {
     obj.path = {
       type: localMatch[2] as 'anime' | 'manga',
-      slug: `l:${localMatch[1]}::${localMatch[3]}`,
+      slug: `l:${localMatch[1]}::${encodeURIComponent(localMatch[3])}`,
     };
     obj.url = '';
     return obj;
@@ -94,10 +105,13 @@ export function pathToUrl(path: Path): string {
   if (path.slug.startsWith('shi:')) {
     return `https://shikimori.one/${path.type}s/${path.slug.substring(4)}`;
   }
+  if (path.slug.startsWith('h:')) {
+    return `https://www.hyakanime.fr/${path.type}/${path.slug.substring(2)}`;
+  }
   if (path.slug.startsWith('l:')) {
     const match = path.slug.match(/^l:([^:]+)::([^:]+)$/);
     if (match) {
-      return `local://${match[1]}/${path.type}/${match[2]}`;
+      return `local://${match[1]}/${path.type}/${decodeURIComponent(match[2])}`;
     }
   }
 

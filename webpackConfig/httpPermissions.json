@@ -17,5 +17,7 @@
   "https://api.myanimelist.net/",
   "https://api.mangadex.org/",
   "https://shikimori.one/",
-  "https://*.plex.direct/"
+  "https://*.plex.direct/",
+  "https://www.hyakanime.fr/*",
+  "https://api-v5.hyakanime.fr/*"
 ]

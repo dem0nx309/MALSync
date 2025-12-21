@@ -1,0 +1,9 @@
+{
+  "search": "https://www.hyakanime.fr/search?q={searchterm}",
+  "urls": {
+    "match": [
+      "*://*.hyakanime.fr/*",
+      "*://hyakanime.fr/*"
+    ]
+  }
+}

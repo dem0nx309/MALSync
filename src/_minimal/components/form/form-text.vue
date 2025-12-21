@@ -23,13 +23,13 @@
       ref="inputField"
       v-model="picked"
       class="text-input"
-      type="input"
+      :type="inputType"
       @focus="inFocus = true"
       @blur="inFocus = false"
     />
     <span v-show="!inFocus && picked" class="span-placeholder">
       <slot name="placeholder" :picked="picked" :suffix="suffix">
-        {{ picked }}{{ picked ? suffix : '' }}
+        {{ inputType === 'password' ? '•'.repeat(picked.length) : picked }}{{ picked ? suffix : '' }}
       </slot>
     </span>
     <span v-if="clearIcon && picked" class="material-icons" @click="picked = ''">close</span>
@@ -83,6 +83,10 @@ const props = defineProps({
   autofocus: {
     type: Boolean,
     default: false,
+  },
+  inputType: {
+    type: String,
+    default: 'text',
   },
 });
 

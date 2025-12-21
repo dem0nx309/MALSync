@@ -1195,8 +1195,8 @@ export class SyncPage {
         const el = j.$(this);
         let numberlength = el.val()!.toString().length;
         if (numberlength < 1) numberlength = 1;
-        const numberWidth = numberlength * 7.7 + 3;
-        el.css('width', `${numberWidth}px`);
+        const numberWidth = numberlength;
+        el.css('width', `${numberWidth}ch`);
       })
       .trigger('input');
   }
@@ -1285,7 +1285,7 @@ export class SyncPage {
         }
 
         let clientId = '606504719212478504';
-        if (!api.settings.get('presenceShowMalsync')) {
+        if (api.settings.get('presenceActivityName') === 'type') {
           if (this.page.type !== 'anime') {
             clientId = '823563138669608980';
           } else {
@@ -1318,6 +1318,13 @@ export class SyncPage {
               type: 3,
             },
           };
+
+          if (api.settings.get('presenceActivityName') === 'title') {
+            pres.presence.name = pres.presence.details.substring(0, 127);
+            delete pres.presence.details;
+          } else if (api.settings.get('presenceActivityName') === 'website') {
+            pres.presence.name = this.page.name.substring(0, 127);
+          }
 
           if (api.settings.get('presenceShowButtons')) {
             let url = null;
